@@ -1,12 +1,13 @@
 let friend = [
-    {name:'Alciades', friendScret:''},
-    {name:'Dna Rose', friendScret:''},
-    {name:'Michele', friendScret:''},
-    {name:'Leandro', friendScret:''},
-    {name:'Hugo', friendScret:''},
-    {name:'Eloi', friendScret:''},
-    {name:'Quiteria', friendScret:''},
-    {name:'Pietra', friendScret:''},
+    {name:'Alciades', friendSecret:''},
+    {name:'Dna Rose', friendSecret:''},
+    {name:'Michele', friendSecret:''},
+    {name:'Leandro', friendSecret:''},
+    {name:'Hugo', friendSecret:''},
+    {name:'Eloi', friendSecret:''},
+    {name:'Quiteria', friendSecret:''},
+    {name:'Pietra', friendSecret:''},
+    /* {name:'Isabella', friendSecret:''}, */
 ]
 
 // ...
@@ -23,14 +24,14 @@ function sortFriends(friend){
             continue;
         }
         
+        friend[0].friendSecret = copyFriends[0].name
+        
         let friends = {
             friend : friend.splice(0, 1)[0],
             secret : copyFriends.splice(0, 1)[0],
-        }
+        }   
 
-        console.log('>> ' + friends.friend.name + ', tirou o amigo : ' + friends.secret.name  )
-
-        result.push(friends)
+        result.push(friends.friend)
     }
     console.log('Finish secret friend')
     return result;
@@ -52,10 +53,6 @@ function shuffle(sourceArray) {
 
 var result = sortFriends(friend)
 
-console.log( 'Consolidate resulties')
-console.log('--------------------------------------- Table result ---------------------------------------')
-console.table(result)
-console.log('--------------------------------------------------------------------------------------------')
-console.log('--------------------------------------- Info result ----------------------------------------')
+console.log( 'Consolidate results')
 console.info(result)
-console.log('--------------------------------------------------------------------------------------------')
+console.log('-----------------------------------------------------------------------------------')
